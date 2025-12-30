@@ -37,3 +37,12 @@ Inspired by VS Code, this project demonstrates **modern frontend architecture** 
 
 ## Folder Structure
 
+src/
+├── app/ # Redux store setup
+├── components/ # Reusable UI components
+├── features/ # Redux slices (editor, files, theme, output)
+├── pages/ # Page components
+├── services/ # API or utility services
+├── styles/ # Global styles
+├── App.jsx
+└── main.jsx
