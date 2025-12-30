@@ -1,12 +1,15 @@
 import { Play, Bug, RotateCcw, Loader2 } from "lucide-react";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const ControlBar = ({ onRun, onDebug }) => {
   const [isRunning, setIsRunning] = useState(false);
+  const runhit = useSelector((state) => state?.run?.hit);
 
   const triggerRun = async () => {
     setIsRunning(true);
     await onRun();
+
     
     setTimeout(() => setIsRunning(false), 600);
   };

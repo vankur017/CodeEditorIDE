@@ -1,11 +1,16 @@
 import { useSelector, useDispatch } from "react-redux";
-import clearLogs from "../../features/output/outputSlice";
+import { addLog, clearOutput } from "../../features/output/outputSlice"
 
 const OutputConsole = () => {
-  const { entries } = useSelector((state) => state.output);
-  const theme = useSelector((state) => state.theme.mode);
+const { entries } = useSelector((state) => state.output);
+  const theme = useSelector((state) => state.theme?.mode);
   const dispatch = useDispatch();
 
+  const handleClear = () => {
+    
+   // console.log("Action Creator:", clearOutput); 
+    dispatch(clearOutput());
+  };
   const isDark = theme === "dark";
 
   return (
@@ -18,7 +23,7 @@ const OutputConsole = () => {
       }`}>
         <span className="text-xs font-bold uppercase tracking-wider opacity-70">Output</span>
         <button 
-          onClick={() => dispatch(clearLogs())}
+          onClick={handleClear}
           className="text-[10px] hover:text-red-400 transition-colors uppercase font-bold"
         >
           Clear

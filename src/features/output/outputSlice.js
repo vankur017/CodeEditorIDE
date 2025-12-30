@@ -7,7 +7,7 @@ const outputSlice = createSlice({
   },
   reducers: {
     addLog: (state, action) => {
-      // payload: { type: 'log' | 'error', message: string }
+      
       state.entries.push({
         ...action.payload,
         timestamp: new Date().toLocaleTimeString(),
